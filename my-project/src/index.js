@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const title = 'My Minimal React Webpack Babel Setup !!';
+import {hello, goodbye} from './lib';
 
 ReactDOM.render(
-  <div>{title}</div>,
+  <div>{hello} {goodbye}</div>,
   document.getElementById('app')
 );
 module.hot.accept();
