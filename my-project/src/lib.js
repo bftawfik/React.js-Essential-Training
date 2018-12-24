@@ -3,7 +3,7 @@ import React from 'react';
 import text from './titles.json';
 
 import './stylesheets/hello.css';
-import './stylesheets/goodbye.css';
+import './stylesheets/goodbye.sass';
 
 export const hello = (
   <h1 id='title' className='hello'>{text.hello}</h1>
