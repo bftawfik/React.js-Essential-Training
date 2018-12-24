@@ -1,10 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {hello, goodbye} from './lib';
+import { SkiDayCount } from './components/SkiDayCount';
+
+window.React = React;
 
 ReactDOM.render(
-  <div>{hello} {goodbye}</div>,
+  <SkiDayCount  total={50}
+				 powder={20}
+				 backcountry={10}
+				 goal={100}/>,
   document.getElementById('app')
 );
 module.hot.accept();
