@@ -15,7 +15,7 @@ ReactDOM.render(
       <Route exact path="/" component={App}/>
       <Route exact path="/add-day" component={App}/>
       <Route exact path="/list-days" component={App}/>
-      <Route path="/list-days/:filter" component={App}/>
+      <Route exact path="/list-days/:filter" component={App}/>
       <Route exact path="*" component={Whoops404}/>
     </Switch>
   </BrowserRouter>,
