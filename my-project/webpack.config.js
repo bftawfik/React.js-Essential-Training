@@ -25,8 +25,8 @@ module.exports = {
     extensions: ['*', '.js', '.jsx']
   },
   output: {
-    path: __dirname + '/dist',
-    publicPath: '/',
+    path: __dirname + '/dist/assets',
+    publicPath: '/assets',
     filename: 'bundle.js'
   },
   plugins: [
@@ -34,6 +34,7 @@ module.exports = {
   ],
   devServer: {
     contentBase: './dist',
+    port: 3000,
     historyApiFallback: true,
     hot: true
   }

@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route, } from "react-router-dom";
 
 import './stylesheets/ui.scss'
+import './stylesheets/index.scss'
 import { App } from './components/App'
 import { Whoops404 } from './components/Whoops404'
 import { matchPath } from "react-router";
@@ -19,6 +20,6 @@ ReactDOM.render(
       <Route exact path="*" component={Whoops404}/>
     </Switch>
   </BrowserRouter>,
-  document.getElementById('app')
+  document.getElementById('react-container')
 );
 module.hot.accept();

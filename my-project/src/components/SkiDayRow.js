@@ -6,14 +6,13 @@ export const SkiDayRow = ({resort, date,
 							powder, backcountry}) => (
 	<tr>
 		<td>
-			{date.getMonth()+1}/{date.getDate()}/
-			{date.getFullYear()}
+			{date}
 		</td>
 		<td>
 			{resort}
 		</td>
 		<td>
-			{(powder) ? <FontAwesomeIcon icon={faSnowflake} /> : null}
+			{(powder) ? <FontAwesomeIcon icon={faSnowflake} />: null}
 		</td>
 		<td>
 			{(backcountry) ? <FontAwesomeIcon icon={faMountain} /> : null}
@@ -24,7 +23,7 @@ export const SkiDayRow = ({resort, date,
 
 SkiDayRow.propTypes = {
 	resort: PropTypes.string.isRequired,
-	date: PropTypes.instanceOf(Date).isRequired,
+	date: PropTypes.string.isRequired,
 	powder: PropTypes.bool,
 	backcountry: PropTypes.bool
 }
