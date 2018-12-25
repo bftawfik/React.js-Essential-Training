@@ -1,7 +1,15 @@
 import PropTypes from 'prop-types';
 import { SkiDayRow } from './SkiDayRow';
+import { NavLink } from 'react-router-dom'
 
-export const SkiDayList = ({days}) => (
+export const SkiDayList = ({days, filter}) => {
+  const filteredDays = (!filter ||
+  		!filter.match(/powder|backcountry/))?
+  		days:
+  		days.filter(day => day[filter])
+
+  return (
+  	<div className="ski-day-list">
 	<table>
 		<thead>
 			<tr>
@@ -10,16 +18,31 @@ export const SkiDayList = ({days}) => (
 				<th>Powder</th>
 				<th>Backcountry</th>
 			</tr>
+			<tr>
+				<td colSpan={4}>
+					<NavLink to="/list-days">
+						All Days
+					</NavLink>
+					<NavLink to="/list-days/powder">
+						Powder Days
+					</NavLink>
+					<NavLink to="/list-days/backcountry">
+						Backcountry Days
+					</NavLink>
+				</td>
+			</tr>
 		</thead>
 		<tbody>
-			{days.map((day, i) =>
+			{filteredDays.map((day, i) =>
 				<SkiDayRow key={i}
 						   {...day}/>
 				)}
 		</tbody>
 
 	</table>
+	</div>
 )
+}
 
 SkiDayList.propTypes = {
 	days: function(props) {
